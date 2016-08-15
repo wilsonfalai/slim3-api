@@ -1,0 +1,296 @@
+[
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Griffin Head",
+        "newName": "Booth Calderon",
+        "company": "BLEEKO",
+        "email": "",
+        "password": "$q+FaI*6!gF+Gh8*0a!fJax))$A7d(-P6y&n9Ocbbf#KA%",
+        "newPassword": "NE-q8LM*dHlnBngnP2c*JznmC(g"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Tricia Mathis",
+        "newName": "Travis Lawson",
+        "company": "DOGNOST",
+        "email": "@dognost.net",
+        "password": "7n326wBypshfdb<H2K-ok8k$qc!b32BF2u&*IKILI$ha",
+        "newPassword": "Mb#2>yf6nJwCp@0f8mb2p19$)1s@(pDc^"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Allen Christian",
+        "newName": "Selma Riley",
+        "company": "XYLAR",
+        "email": "allen.christian xylar.com",
+        "password": "*t%DtCePx2jtw!+A>f$g(x4PntP!5rG6rbvE(ps)3KI78tr",
+        "newPassword": "BC<Odm-M5nM-Pe<(Lt$+At@%"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Manuela Noel",
+        "newName": "Evangelina Carpenter",
+        "company": "TRANSLINK",
+        "email": "manuela.noel@.info",
+        "password": "b(atf5>>ns&m&on3E5B",
+        "newPassword": "$6It0+C-)+aM)@gNMA1HKp@x"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Ruiz Davis",
+        "newName": "Steele Shepard",
+        "company": "QIAO",
+        "email": "ruiz.davis@qiao",
+        "password": "ufxHs+#kc7fz<PJMI#lB",
+        "newPassword": "%7o#>O$loC>j7C)*Pj+Ek5o45GoycnMqB33$rD&aL!r+z7I"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Diana Frost",
+        "newName": "Madge Conley",
+        "company": "EXTRAGENE",
+        "email": "diana.frost@extragene.name+spam",
+        "password": "K9wAPaJ6",
+        "newPassword": "sx2I0adPc"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Sharlene Grimes",
+        "newName": "Boyle Boyd",
+        "company": "QUARMONY",
+        "email": ".sharlene.grimes@quarmony.us",
+        "password": "o!6B#PpDoh#k+7xPhFw!4C$gOqf<y",
+        "newPassword": ">NoAN3HFh7(5A-qwJ+LGycpw#3$r@e+lGq-E"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Rosales Montgomery",
+        "newName": "Kathryn Stark",
+        "company": "TURNLING",
+        "email": "plainaddress",
+        "password": "y>$uxg(Gs789q)biDf9HlO+^x-Lyr)w",
+        "newPassword": "8(hhiM*be$vFPc#2dDl0-IsH3K>HPx80mg!<1"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Gates Kaufman",
+        "newName": "Amber Daugherty",
+        "company": "EPLOSION",
+        "email": "#@%^%#$@#$@#.com",
+        "password": "nC3suPzr",
+        "newPassword": "qm#4Oos@pdy8xu!uhjy76vF$1hLl-b"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Faulkner Bolton",
+        "newName": "Jarvis Ewing",
+        "company": "SCHOOLIO",
+        "email": "Joe Smith <email@example.com>",
+        "password": "m@LEE(&P&6KD#j@#!6Pe7(hqPiMfb6I<I",
+        "newPassword": "Hvvpn$2JDf-)&u"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Sawyer Kline",
+        "newName": "Sheree Finch",
+        "company": "LIQUIDOC",
+        "email": "email.example.com",
+        "password": "@4M)83ONecEqcz)yzwl&",
+        "newPassword": "KsDK24*g1N0$G9b1"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Juanita Davenport",
+        "newName": "Jenny Potter",
+        "company": "ISIS",
+        "email": "email@example@example.com",
+        "password": "kNslzl9Ei",
+        "newPassword": "LfLe+CH^t7ii87%KqrN&9E*z%^<cBJ&aNL"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Mckay Martin",
+        "newName": "Russell Mayer",
+        "company": "COMTEXT",
+        "email": ".email@example.com",
+        "password": "k!<^B!<wtb(p$JghAJ5kBwFuM)5^k!j$>t5l5hNLmLegd",
+        "newPassword": "m$NAr^#N7p6zm78"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Autumn Carey",
+        "newName": "Gracie Hendrix",
+        "company": "PAPRIKUT",
+        "email": "email.@example.com",
+        "password": "D!KhhB6rnkaa>*sh>r#nkh@<GaIBy(5nw!5%9$fm4b#dvF(^Jz)",
+        "newPassword": "uct+4&BH4qf%FImg4k3Mfsr3MC"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Theresa Fuller",
+        "newName": "Holt Gentry",
+        "company": "VERBUS",
+        "email": "email..email@example.com",
+        "password": "mKoiy1j9+B^dj<hF1DFG)&ecD%y4&thgL",
+        "newPassword": "#6ur)z0-*9<sE6z4mf6dDNe&xB-*#-Pg6M32q-Bjv+eGlAB"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Norris Bradford",
+        "newName": "Angie Powell",
+        "company": "OVERFORK",
+        "email": "あいうえお@example.com",
+        "password": "!8guN00O9@nHl+GE+)k%#rM#n#owN>utH",
+        "newPassword": "0ejBaPgmI8yf$@"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Hazel Ellis",
+        "newName": "Lynne Hines",
+        "company": "KEEG",
+        "email": "email@example.com (Joe Smith)",
+        "password": "2M^COG$9Lq@EFu4Ju+^+fNG+@wkqw8",
+        "newPassword": "qOwfLrI>nt^v658Ju$>J+m7<^l(JC-DFr"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Jillian Sheppard",
+        "newName": "Roxanne Bates",
+        "company": "PORTICO",
+        "email": "email@-example.com",
+        "password": "Gs02C>yL5czw<hOJHApJ<Gpntui9^",
+        "newPassword": "Cj9(4z<362GKdI"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Kelli Richmond",
+        "newName": "Desiree Harrell",
+        "company": "ANIXANG",
+        "email": "email@111.222.333.44444",
+        "password": "gdtLPF>o!#lq2@*B-8Alm8jc*3Im",
+        "newPassword": "b06tf(067J^tleOx)Ev1he)f&<g%v7L"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Jessie Warren",
+        "newName": "Dillard Boyer",
+        "company": "UPLINX",
+        "email": "email@example..com",
+        "password": "4JcjGmd-OdwjG7*(nG",
+        "newPassword": "asBAwHaf>hc7F6F4&Hke6Lw@03^+-eM%E6tsh(jkjqL7P(3I1"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "April Cervantes",
+        "newName": "Harvey Farmer",
+        "company": "ACCUPHARM",
+        "email": "Abc..123@example.com",
+        "password": "(NsorDP%-A!<3ctH@37^k>LBsMvL(ID^!ap37$tJK",
+        "newPassword": "Nokx2HmgB7gMemlBqaik72edCsjIDGPl7f19hL7Am>NPM21m"
+    }
+]

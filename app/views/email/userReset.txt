@@ -1,0 +1,7 @@
+Somebody has just submitted a password reset request and specified this email address.
+
+If this is you, follow the confirmation link below to finish resetting your account password.
+
+{{ url }}/reset-password/{{ userId }}/{{ token }}
+
+If this was not you, please disregard this message.

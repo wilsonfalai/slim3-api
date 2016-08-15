@@ -1,0 +1,100 @@
+[
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "",
+        "newName": "Garner Newton",
+        "company": "ZOLAR",
+        "email": "lenora.cobb@zolar.us",
+        "password": "v@ma8O<cLkfdqA(wp(@5B0jN>O7l(^qLNM9te",
+        "newPassword": ")ic>biGdJy2)hMHB"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "M",
+        "newName": "Brianna Phillips",
+        "company": "LUNCHPAD",
+        "email": "mcdowell.blankenship@lunchpad.biz",
+        "password": "dlMp@0zsx>tB6G<@&-gPyl1gK2)3EPAL2mDtt%sgygP",
+        "newPassword": "@-g3sFmj%o!C1FK!q2^-DIpOotFKtIuxwqj-&E9856>yofOmmvb%Cx"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Alexander Gillespie Alexander Gillespie Alexander Gillespie Alexander Gillespie",
+        "newName": "Johnnie Bolton",
+        "company": "EVENTAGE",
+        "email": "alexander.gillespie@eventage.io",
+        "password": "zvuE4LNm3tAuFr)r7esJ#h>@rpJu+H6g&4nom$vH",
+        "newPassword": "3n+hEds8i0mHnOJr0Nt&4&M%"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Roth-Quinn",
+        "newName": "Dora Knight",
+        "company": "IMAGINART",
+        "email": "roth.quinn@imaginart.co.uk",
+        "password": "<q8O7Ij5m+N<+*9@BE3^895g4gL+@okqn$MAkn3j&",
+        "newPassword": "rl&&4I><eD8hJKJzI76ox*5*"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Fay 'Garcia",
+        "newName": "Eaton Frost",
+        "company": "COMCUBINE",
+        "email": "fay.garcia@comcubine.ca",
+        "password": "noNmc<c#!%akhhy>n*qh*<cPs5HE*<HGC)wotHDE6A^JmGNa1",
+        "newPassword": "I@0n8sh$emOoa4D^oNi3r4G**wHPDH%38i&fHk5Ku^"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Jackson ^Bridges",
+        "newName": "Harmon Black",
+        "company": "APEXIA",
+        "email": "jackson.bridges@apexia.biz",
+        "password": "05+#+qHqH%eyjO1tIvE-MKir!kum8kb2xpNIr7#CFn3d",
+        "newPassword": "j#zg1DB0KsF1!NDc>@F*CrIr69%Nzfz$2thL"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userInput"
+
+        },
+        "name": "Eva &Cantrell",
+        "newName": "Atkins Benton",
+        "company": "NETAGY",
+        "email": "eva.cantrell@netagy.info",
+        "password": "stiM(9zv7yBf&Heywy0rhIdDmnHdI5$H5mi8+d7d#^2vujc4",
+        "newPassword": "tKpF@s73MqF9#a4f8m)6IHxzrF9&0Kspf$Ef79sI0!h"
+    }
+]

@@ -1,0 +1,25 @@
+[
+    {
+        "valid": true,
+        "name": "Pollard Ashley",
+        "newName": "Erica Kim",
+        "company": "VURBO",
+        "email": "pollard.ashley@vurbo.net",
+        "password": "F&u-9cK94jGGivub&9J>*#z*wGKnyhoHLArCMwsKgMff29t59tq",
+        "newPassword": "j%u!q)95PtqkA+!"
+    },
+    {
+        "valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userExists"
+
+        },
+        "name": "Pollard Ashley",
+        "newName": "Erica Kim",
+        "company": "VURBO",
+        "email": "pollard.ashley@vurbo.net",
+        "password": "F&u-9cK94jGGivub&9J>*#z*wGKnyhoHLArCMwsKgMff29t59tq",
+        "newPassword": "j%u!q)95PtqkA+!"
+    }
+]

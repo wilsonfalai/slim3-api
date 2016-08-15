@@ -1,0 +1,16 @@
+[
+	{
+		"valid": false,
+        "test": {
+            "endpoint": "createUser",
+            "condition": "userAuth"
+
+        },
+		"name": "Griffin Head",
+		"newName": "Booth Calderon",
+		"company": "BLEEKO",
+		"email": "griffin.head@bleeko.io",
+		"password": "$q+FaI*6!gF+Gh8*0a!fJax))$A7d(-P6y&n9Ocbbf#KA%",
+		"newPassword": "NE-q8LM*dHlnBngnP2c*JznmC(g"
+	}
+]
