@@ -57,7 +57,7 @@ final class ReadUsers
             return $response->withStatus(200);
         } else {
             $this->messages->setErrors('USER-0016');
-            $this->messages->throwErrors($request, $response);
+            return $this->messages->throwErrors($request, $response, $this->renderer);
         }
     }
 }

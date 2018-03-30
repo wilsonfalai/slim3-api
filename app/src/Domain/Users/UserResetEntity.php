@@ -16,7 +16,7 @@ class UserResetEntity
      *
      * @var string
      */
-    protected $userId;
+    protected $user_id;
 
     /**
      * Token used to reset user
@@ -30,7 +30,7 @@ class UserResetEntity
      *
      * @var string
      */
-    protected $created;
+    protected $created_at;
 
     /**
      * Accept an array of data matching properties of this class
@@ -40,10 +40,10 @@ class UserResetEntity
      */
     public function __construct($data = []) {
         if (!empty($data)) {
-            $this->id      = $data['id'];
-            $this->userId  = $data['userId'];
-            $this->token   = $data['token'];
-            $this->created = $data['created'];
+            $this->id       = $data['id'];
+            $this->user_id  = $data['user_id'];
+            $this->token    = $data['token'];
+            $this->created_at  = $data['created_at'];
         }
     }
 
@@ -78,7 +78,7 @@ class UserResetEntity
      */
     public function getUserId()
     {
-        return $this->userId;
+        return $this->user_id;
     }
 
     /**
@@ -90,7 +90,7 @@ class UserResetEntity
      */
     public function setUserId($userId)
     {
-        $this->userId = $userId;
+        $this->user_id = $userId;
 
         return $this;
     }
@@ -124,9 +124,9 @@ class UserResetEntity
      *
      * @return string
      */
-    public function getCreated()
+    public function getCreatedAt()
     {
-        return $this->created;
+        return $this->created_at;
     }
 
     /**
@@ -136,9 +136,9 @@ class UserResetEntity
      *
      * @return self
      */
-    public function setCreated($created)
+    public function setCreatedAt($createdAt)
     {
-        $this->created = $created;
+        $this->created_at = $createdAt;
 
         return $this;
     }

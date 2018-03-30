@@ -25,7 +25,7 @@ class UserResetTransformer extends TransformerAbstract
         return $this->transformWithFieldFilter([
             'id'      => (string) $userReset->getId(),
             'token'   => (string) $userReset->getToken(),
-            'created' => $userReset->getCreated(),
+            'created_at' => $userReset->getCreatedAt()
         ]);
     }
 

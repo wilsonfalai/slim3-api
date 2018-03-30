@@ -5,7 +5,7 @@
 /**
  * Set app timezone
  */
-date_default_timezone_set('UTC');
+date_default_timezone_set('America/Sao_Paulo');
 
 /**
  * Detect if .env exists and load required specific environment variables

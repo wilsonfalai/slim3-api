@@ -51,7 +51,14 @@ class UserEntity
      *
      * @var string
      */
-    protected $created;
+    protected $created_at;
+
+    /**
+     * Date/time the user was updated
+     *
+     * @var string
+     */
+    protected $updated_at;
 
     /**
      * Accept an array of data matching properties of this class
@@ -67,7 +74,8 @@ class UserEntity
             $this->password = $data['password'];
             $this->token = $data['token'];
             $this->status = $data['status'];
-            $this->created = $data['created'];
+            $this->created_at = $data['created_at'];
+            $this->updated_at = $data['updated_at'];
         }
     }
 
@@ -220,9 +228,9 @@ class UserEntity
      *
      * @return string
      */
-    public function getCreated()
+    public function getCreatedAt()
     {
-        return $this->created;
+        return $this->created_at;
     }
 
     /**
@@ -232,9 +240,33 @@ class UserEntity
      *
      * @return self
      */
-    public function setCreated($created)
+    public function setCreated($createdAt)
     {
-        $this->created = $created;
+        $this->created_at = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Date/time the user was created.
+     *
+     * @return string
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * Sets the Date/time the user was created.
+     *
+     * @param string $created the created
+     *
+     * @return self
+     */
+    public function setUpdated($updatedAt)
+    {
+        $this->updated_at = $updatedAt;
 
         return $this;
     }

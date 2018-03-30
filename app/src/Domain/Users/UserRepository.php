@@ -24,9 +24,9 @@ class UserRepository implements UserInterface
 
     public function getUsers($page = 0, $perPage = 15)
     {
-        $sql = "SELECT `users`.`id`, `users`.`name`, `users`.`email`, `users`.`password`, `users`.`token`, `users`.`status`, `users`.`created`
-            FROM `users`
-            WHERE `users`.`status` > 0
+        $sql = "SELECT `user`.`id`, `user`.`name`, `user`.`email`, `user`.`password`, `user`.`token`, `user`.`status`, `user`.`created_at`, `user`.`updated_at`
+            FROM `user`
+            WHERE `user`.`status` > 0
             LIMIT $page, $perPage";
         $stmt = $this->db->prepare($sql);
         $stmt->execute();
@@ -40,9 +40,9 @@ class UserRepository implements UserInterface
 
     public function getUser($id)
     {
-        $sql = "SELECT `users`.`id`, `users`.`name`, `users`.`email`, `users`.`password`, `users`.`token`, `users`.`status`, `users`.`created`
-            FROM `users`
-            WHERE `users`.`id` = :id";
+        $sql = "SELECT `user`.`id`, `user`.`name`, `user`.`email`, `user`.`password`, `user`.`token`, `user`.`status`, `user`.`created_at`, `user`.`updated_at`
+            FROM `user`
+            WHERE `user`.`id` = :id";
         $stmt = $this->db->prepare($sql);
         $stmt->execute(['id' => $id]);
         $user = $stmt->fetch();
@@ -60,9 +60,9 @@ class UserRepository implements UserInterface
 
     public function getUserByEmail($email)
     {
-        $sql = "SELECT `users`.`id`, `users`.`name`, `users`.`email`, `users`.`password`, `users`.`token`, `users`.`status`, `users`.`created`
-            FROM `users`
-            WHERE `users`.`email` = :email";
+        $sql = "SELECT `user`.`id`, `user`.`name`, `user`.`email`, `user`.`password`, `user`.`token`, `user`.`status`, `user`.`created_at`
+            FROM `user`
+            WHERE `user`.`email` = :email";
         $stmt = $this->db->prepare($sql);
         $stmt->execute(['email' => $email]);
         $user = $stmt->fetch();
@@ -80,12 +80,12 @@ class UserRepository implements UserInterface
 
     public function getUserReset($userId, $token)
     {
-        $sql = "SELECT `userResets`.`id`, `userResets`.`userId`, `userResets`.`token`, `userResets`.`created`
-            FROM `userResets`
-            WHERE `userResets`.`userId` = :userId AND `userResets`.`token` = :token";
+        $sql = "SELECT `user_reset`.`id`, `user_reset`.`user_id`, `user_reset`.`token`, `user_reset`.`created_at`
+            FROM `user_reset`
+            WHERE `user_reset`.`user_id` = :user_id AND `user_reset`.`token` = :token";
         $stmt = $this->db->prepare($sql);
         $stmt->execute([
-            'userId' => $userId,
+            'user_id' => $userId,
             'token' => $token,
         ]);
         $userReset = $stmt->fetch();
@@ -98,9 +98,9 @@ class UserRepository implements UserInterface
 
     public function saveUser(User $user)
     {
-        $sql = "INSERT INTO `slim3-api`.`users`
-            (id, name, email, password, token, status, created) VALUES
-            (:id, :name, :email, :password, :token, :status, :created)";
+        $sql = "INSERT INTO `user`
+            (id, name, email, password, token, status, created_at, updated_at) VALUES
+            (:id, :name, :email, :password, :token, :status, :created_at, :updated_at)";
         $stmt = $this->db->prepare($sql);
         $result = $stmt->execute([
             'id'       => $user->getId(),
@@ -109,7 +109,8 @@ class UserRepository implements UserInterface
             'password' => $user->getPassword(),
             'token'    => $user->getToken(),
             'status'   => $user->getStatus(),
-            'created'  => $user->getCreated(),
+            'created_at'  => $user->getCreatedAt(),
+            'updated_at'  => $user->getUpdatedAt(),
         ]);
         
         if ($result) {
@@ -120,15 +121,15 @@ class UserRepository implements UserInterface
 
     public function saveUserReset(UserReset $userReset)
     {
-        $sql = "INSERT INTO `slim3-api`.`userResets`
-            (id, userId, token, created) VALUES
-            (:id, :userId, :token, :created)";
+        $sql = "INSERT INTO `user_reset`
+            (id, user_id, token, created_at) VALUES
+            (:id, :user_id, :token, :created_at)";
         $stmt = $this->db->prepare($sql);
         $result = $stmt->execute([
             'id'       => $userReset->getId(),
-            'userId'   => $userReset->getUserId(),
+            'user_id'   => $userReset->getUserId(),
             'token'    => $userReset->getToken(),
-            'created'  => $userReset->getCreated(),
+            'created_at'  => $userReset->getCreatedAt(),
         ]);
         
         if ($result) {
@@ -139,9 +140,9 @@ class UserRepository implements UserInterface
 
     public function updateUser(User $user)
     {
-        $sql = "UPDATE `slim3-api`.`users`
-                SET `users`.`name` = :name
-                WHERE `users`.`id` = :id";
+        $sql = "UPDATE `user`
+                SET `user`.`name` = :name
+                WHERE `user`.`id` = :id";
         $stmt = $this->db->prepare($sql);
         $result = $stmt->execute([
             'id'   => $user->getId(),
@@ -156,9 +157,9 @@ class UserRepository implements UserInterface
 
     public function updateUserStatus(User $user)
     {
-        $sql = "UPDATE `slim3-api`.`users`
-                SET `users`.`status` = :status
-                WHERE `users`.`id` = :id";
+        $sql = "UPDATE `user`
+                SET `user`.`status` = :status
+                WHERE `user`.`id` = :id";
         $stmt = $this->db->prepare($sql);
         $result = $stmt->execute([
             'id'     => $user->getId(),
@@ -173,9 +174,9 @@ class UserRepository implements UserInterface
 
     public function updateUserPassword(User $user)
     {
-        $sql = "UPDATE `slim3-api`.`users`
-                SET `users`.`password` = :password
-                WHERE `users`.`id` = :id";
+        $sql = "UPDATE `user`
+                SET `user`.`password` = :password
+                WHERE `user`.`id` = :id";
         $stmt = $this->db->prepare($sql);
         $result = $stmt->execute([
             'id'       => $user->getId(),
@@ -195,10 +196,10 @@ class UserRepository implements UserInterface
 
     public function deleteUserResets($userId)
     {
-        $sql = "DELETE FROM `slim3-api`.`userResets`
-                WHERE `userResets`.`userId` = :userId";
+        $sql = "DELETE FROM `user_reset`
+                WHERE `user_reset`.`user_id` = :user_id";
         $stmt = $this->db->prepare($sql);
-        $result = $stmt->execute(['userId' => $userId]);
+        $result = $stmt->execute(['user_id' => $userId]);
 
         if ($result) {
             return true;

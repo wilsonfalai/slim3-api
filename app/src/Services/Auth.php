@@ -108,7 +108,8 @@ class Auth
         $created = strtotime($created);
         $now     = strtotime(date('Y-m-d H:i:s'));
         $diff    = round(($now - $created) / 60, 2);
-        if (intval($diff) < 60) {
+
+        if (intval($diff) < 60) {//Minutos
             return true;
         }
         return false;

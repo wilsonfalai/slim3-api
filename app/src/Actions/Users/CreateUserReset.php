@@ -63,7 +63,8 @@ final class CreateUserReset
             $userReset->setId($this->uuid->v5($this->uuid->v4(), $_SERVER['APP_SECRET']));
             $userReset->setUserId($user->getId());
             $userReset->setToken($this->auth->generateToken());
-            $userReset->setCreated(date('Y-m-d H:i:s'));
+            $userReset->setCreatedAt(date('Y-m-d H:i:s'));
+            $userReset->setCreatedAt(date('Y-m-d H:i:s'));
 
             if ($this->userRepository->saveUserReset($userReset)) {
                 $userReset->setId($this->uuid->toString($userReset->getId()));

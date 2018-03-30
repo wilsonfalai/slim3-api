@@ -70,6 +70,7 @@ final class CreateUser
             $user->setToken($this->auth->generateToken());
             $user->setStatus(0);
             $user->setCreated(date('Y-m-d H:i:s'));
+            $user->setUpdated(date('Y-m-d H:i:s'));
 
             if ($this->userRepository->saveUser($user)) {
                 $user->setId($this->uuid->toString($user->getId()));

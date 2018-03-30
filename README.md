@@ -53,3 +53,23 @@ For reference, the optional array uses the following signature. ```[string $vali
 This middleware uses Respect\Validation so check out their documentation for further details: http://respect.github.io/Validation/
 
 The validation middleware is loosely based on Davide Pastore's Slim-Validation. https://github.com/DavidePastore/Slim-Validation
+
+###Fluxo da Aplicação
+
+1. public/index.php
+    - Autoload -> composer
+    - Boostrap -> app/bootstrap.php
+        - Config
+            - Configuração timezone
+            - Configuração geral da aplicação via .env
+            - Configuração se api em manutenção ou não
+        - App
+            - Outras Configurações do Slim (displayErrorDetails, routerCacheFile, etc...)
+            - Instancia o Slim Framework com as configurações
+        - Dependencies -> Definição de todas as dependencias da aplicação (Monolog, Pdo, Twig, Jwt, Actions, etc...)
+        - Middleware
+            - ValidationMiddleware
+            - AuthMiddleware
+        - Routes -> Todas as rotas da aplicação definidas aqui
+        - Run() -> Executa a requisição/aplicação      
+        

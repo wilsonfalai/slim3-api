@@ -50,7 +50,7 @@ final class UpdateUserPassword
         $password  = $this->auth->hashPassword($data['password']);
         $userReset = $this->userRepository->getUserReset($id, $token);
 
-        if ($userReset && $this->auth->validatePasswordResetExpiry($userReset->getCreated())) {
+        if ($userReset && $this->auth->validatePasswordResetExpiry($userReset->getCreatedAt())) {
             $user = $this->userRepository->getUser($id);
             $user->setPassword($password);
             if ($this->userRepository->updateUserPassword($user)) {
@@ -68,6 +68,6 @@ final class UpdateUserPassword
         } else {
             $this->messages->setErrors('USER-0012');
         }
-        $this->messages->throwErrors($request, $response, $this->renderer);
+        return $this->messages->throwErrors($request, $response, $this->renderer);
     }
 }

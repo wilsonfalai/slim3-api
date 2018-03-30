@@ -31,7 +31,8 @@ class UserTransformer extends TransformerAbstract
             'id'      => (string) $user->getId(),
             'name'    => (string) $user->getName(),
             'token'   => (string) $user->getToken(),
-            'created' => $user->getCreated(),
+            'created_at' => $user->getCreatedAt(),
+            'updated_at' => $user->getUpdatedAt(),
         ]);
     }
 
