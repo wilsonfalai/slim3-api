@@ -2,6 +2,7 @@
 
 namespace App\Actions\Users;
 
+use App\Actions\ActionInterface;
 use App\Domain\Users\UserRepository;
 use App\Domain\Users\UserTransformer;
 use App\Services\Messages;
@@ -10,8 +11,9 @@ use App\Services\UUID;
 use RKA\ContentTypeRenderer\Renderer;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
+use Respect\Validation\Validator as v;
 
-final class ReadUsers
+final class ReadUsers implements ActionInterface
 {    
     /**
      * @param UserRepository  $userRepository
@@ -29,6 +31,12 @@ final class ReadUsers
         $this->transformer     = $transformer;
         $this->uuid            = $uuid;
         $this->renderer        = $renderer;
+    }
+
+    public static function getValidationRules(){
+        return [
+            'page' => v::optional(v::intVal())
+        ];
     }
 
     /**

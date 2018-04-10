@@ -14,8 +14,8 @@ Vagrant.configure(2) do |config|
   # boxes at https://atlas.hashicorp.com/search.
   # config.vm.box_url = ["http://people.canonical.com/~dwatkins/livecd.ubuntu-cpc.vagrant.2.box"]
   # config.vm.box = "ubuntu-yakkety64"
-  # config.vm.box = "ubuntu/xenial64"
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "ubuntu/xenial64"
+  # config.vm.box = "ubuntu/trusty64"
   # config.vm.box = "debian/jessie64"
   config.vm.provision :shell, path: "bootstrap.sh"
   config.vm.synced_folder "./", "/vagrant", id: "vagrant-root",
@@ -62,7 +62,7 @@ Vagrant.configure(2) do |config|
       vb.memory = "1024"
 
       # Customize virtualbox name
-      vb.name = "github.com_dupkey_slim3-api"
+      vb.name = "ecommerce-api-dashboard"
   end
   #
   # View the documentation for the provider you are using for more
@@ -78,8 +78,8 @@ Vagrant.configure(2) do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   sudo apt-get update
-  #   sudo apt-get install -y apache2
-  # SHELL
+   config.vm.provision "shell", inline: <<-SHELL
+     sudo apt-get update
+     sudo apt-get install -y nginx
+   SHELL
 end

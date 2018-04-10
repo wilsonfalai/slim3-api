@@ -40,7 +40,7 @@ class ValidationMiddleware
      * @param Messages                  $messages
      * @param Renderer                  $renderer
      */
-    public function __construct(ValidationRules $validationRules, Messages $messages, Renderer $renderer)
+    public function __construct($validationRules, Messages $messages, Renderer $renderer)
     {
         $this->validationRules = $validationRules;
         $this->messages        = $messages;
@@ -58,11 +58,15 @@ class ValidationMiddleware
      */
     public function __invoke(Request $request, Response $response, $next)
     {
+
         $this->setValidators($request);
+        //die(var_dump($this->validators));
         // $this->translator      = $translator;
 
+        //die(var_dump($this->validators));
+
         //Validate every parameter in the validators array
-        foreach ($this->validators as $key => $validator) {
+        /*foreach ($this->validators as $key => $validator) {
             if (is_array($validator)) {
                 // [string $validationRule , bool $optional , string $name]
                 $param          = $this->getParam($request, $key);
@@ -95,7 +99,33 @@ class ValidationMiddleware
                     ]);
                 }
             }
+        }*/
+
+        foreach ($this->validators as $key => $validator) {
+
+            //$param = is_array($validator) ? $this->getParam($request, $key) : $this->getParam($request, $validator);
+            $param = $this->getParam($request, $key);
+            try {
+                $validator->assert($param);
+            } catch (NestedValidationException $exception) {
+                if ($this->translator) {
+                    $exception->setParam('translator', $this->translator);
+                }
+
+                $messages = $exception->getMessages();
+                foreach ($messages as $message) {
+                    $this->messages->setStaticErrors([
+                        'code'   => 'VAL-0001',
+                        'status' => 400,
+                        'title'  => 'Validation error',
+                        'detail' => $message
+                    ]);
+                }
+            }
+
         }
+
+
 
         if ($this->messages->hasErrors()) {
             $errors = $this->messages->getErrors();

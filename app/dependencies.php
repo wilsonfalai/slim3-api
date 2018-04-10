@@ -87,6 +87,7 @@ $container['logger'] = function ($c) {
 /**
  * Actions
  */
+//AUTH
 $container[App\Actions\Auth\Signin::class] = function ($c) {
     return new App\Actions\Auth\Signin($c->get('userRepository'), $c->get('userTransformer'), $c->get('auth'), $c->get('messages'), $c->get('transformer'), $c->get('uuid'), $c->get('jwt'), $c->get('renderer'));
 };
@@ -95,6 +96,7 @@ $container[App\Actions\Auth\UpdateToken::class] = function ($c) {
     return new App\Actions\Auth\UpdateToken($c->get('userRepository'), $c->get('userTransformer'), $c->get('auth'), $c->get('messages'), $c->get('transformer'), $c->get('uuid'), $c->get('jwt'), $c->get('renderer'));
 };
 
+//USER
 $container[App\Actions\Users\CreateUser::class] = function ($c) {
     return new App\Actions\Users\CreateUser($c->get('userEntity'), $c->get('userRepository'), $c->get('userTransformer'), $c->get('auth'), $c->get('email'), $c->get('messages'), $c->get('transformer'), $c->get('uuid'), $c->get('renderer'), $c->get('view'));
 };
@@ -123,6 +125,19 @@ $container[App\Actions\Users\UpdateUserStatus::class] = function ($c) {
     return new App\Actions\Users\UpdateUserStatus($c->get('userRepository'), $c->get('userTransformer'), $c->get('messages'), $c->get('transformer'), $c->get('uuid'), $c->get('renderer'));
 };
 
+//CLIENT
+$container[App\Actions\Client\CreateClient::class] = function ($c) {
+    return new App\Actions\Client\CreateClient($c->get('clientEntity'), $c->get('clientRepository'), $c->get('clientTransformer'), $c->get('auth'), $c->get('email'), $c->get('messages'), $c->get('transformer'), $c->get('uuid'), $c->get('renderer'), $c->get('view'));
+};
+
+$container[App\Actions\Client\ReadClients::class] = function ($c) {
+    return new App\Actions\Client\ReadClients($c->get('clientRepository'), $c->get('clientTransformer'), $c->get('messages'), $c->get('transformer'), $c->get('uuid'), $c->get('renderer'));
+};
+
+$container[App\Actions\Client\ReadClient::class] = function ($c) {
+    return new App\Actions\Client\ReadClient($c->get('clientRepository'), $c->get('clientTransformer'), $c->get('messages'), $c->get('transformer'), $c->get('uuid'), $c->get('renderer'));
+};
+
 /**
  * Domain
  */
@@ -144,6 +159,18 @@ $container['userResetTransformer'] = function ($c) {
 
 $container['userTransformer'] = function ($c) {
     return new App\Domain\Users\UserTransformer;
+};
+
+$container['clientEntity'] = $container->factory(function ($c) {
+    return new App\Domain\Client\ClientEntity();
+});
+
+$container['clientRepository'] = function ($c) {
+    return new App\Domain\Client\ClientRepository($c->get('db'));
+};
+
+$container['clientTransformer'] = function ($c) {
+    return new App\Domain\Client\ClientTransformer();
 };
 
 
@@ -188,3 +215,4 @@ $container['transformer'] = function ($c) {
 $container['uuid'] = function ($c) {
     return new App\Services\UUID;
 };
+

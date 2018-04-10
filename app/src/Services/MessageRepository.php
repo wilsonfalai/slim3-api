@@ -143,6 +143,33 @@ class MessageRepository
             'title'  => 'Unable to update user information',
             'detail' => 'A database error has occurred. Unable to update user information.'
         ],
+
+        //CLIENT
+        'CLIENT-0001' => [
+            'code'   => 'CLIENT-0001',
+            'status' => 409,
+            'title'  => 'Email conflict',
+            'detail' => 'That email address is already in use. '
+        ],
+        'CLIENT-0002' => [
+            'code'   => 'CLIENT-0002',
+            'status' => 201,
+            'title'  => 'Client created',
+            'detail' => 'Client created successful.'
+        ],
+        'CLIENT-0003' => [
+            'code'   => 'CLIENT-0003',
+            'status' => 404,
+            'title'  => 'Client not found',
+            'detail' => 'The requested client was not found on this server.'
+        ],
+        'CLIENT-0017' => [
+            'code'   => 'CLIENT-0017',
+            'status' => 500,
+            'title'  => 'Unable to save client account',
+            'detail' => 'A database error has occurred. Unable to save client account.'
+        ],
+
         // AUTH
         'AUTH-0001' => [
             'code'   => 'AUTH-0001',

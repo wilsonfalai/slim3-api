@@ -14,6 +14,7 @@ use RKA\ContentTypeRenderer\Renderer;
 use Slim\Views\Twig;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
+use Respect\Validation\Validator as v;
 
 final class CreateUser
 {
@@ -41,6 +42,14 @@ final class CreateUser
         $this->uuid            = $uuid;
         $this->renderer        = $renderer;
         $this->view            = $view;
+    }
+
+    public static function getValidationRules(){
+        return [
+            'name' => v::length(3, 64),
+            'email' => v::email(),
+            'password' => v::length(8, 32),
+        ];
     }
 
     /**

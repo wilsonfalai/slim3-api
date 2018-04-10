@@ -2,6 +2,8 @@
 
 namespace App\Domain\Users;
 
+use Respect\Validation\Validator as v;
+
 class UserEntity
 {
     /**
@@ -78,6 +80,7 @@ class UserEntity
             $this->updated_at = $data['updated_at'];
         }
     }
+
 
     /**
      * Gets the Id of the user (UUID).
