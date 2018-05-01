@@ -55,7 +55,7 @@ final class CreateClient extends ActionBaseClient implements ActionInterface
         $phone              = $data['phone'];
         $document_number    = $data['document_number'];
         $password           = $data['password'];
-        $clientExists         = $this->clientRepository->getClientByEmail($email);
+        $clientExists       = $this->clientRepository->getClientByEmail($email);
 
 
         if ($clientExists) {

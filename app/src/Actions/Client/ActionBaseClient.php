@@ -26,6 +26,8 @@ class ActionBaseClient extends ActionBase
 {
     protected $container;
 
+    protected $uuid;
+
     /**
      * @param ClientEntity      $clientEntity
      * @param ClientRepository  $clientRepository
