@@ -1,4 +1,5 @@
 <?php
+//php -S localst:8080 display_errors=0
 
 /**
  * Users
@@ -37,6 +38,41 @@ $app->group('/users', function() {
 });
 
 /**
+ * Product
+ */
+$app->group('/products', function() {
+
+    $this->post('', App\Actions\Product\CreateProduct::class)
+        ->setArguments(['validators' => \App\Actions\Product\CreateProduct::getValidationRules()]);
+
+    /*$this->get('', \App\Actions\Product\ReadProducts::class)
+        ->setArguments(['validators' => \App\Actions\Product\ReadProducts::getValidationRules()]);
+
+    $this->group('/{id}', function() {
+        $this->get('', App\Actions\Product\ReadProduct::class)
+            ->setArguments(['validators' => \App\Actions\Product\ReadProduct::getValidationRules()]);
+    });*/
+});
+
+/**
+ * Category
+ */
+$app->group('/categories', function() {
+
+    $this->post('', App\Actions\Category\CreateCategory::class)
+        ->setArguments(['validators' => \App\Actions\Category\CreateCategory::getValidationRules()]);
+
+    /*$this->get('', \App\Actions\Category\ReadCategories::class)
+        ->setArguments(['validators' => \App\Actions\Category\ReadCategories::getValidationRules()]);
+
+    $this->group('/{id}', function() {
+        $this->get('', App\Actions\Category\ReadCategory::class)
+            ->setArguments(['validators' => \App\Actions\Category\ReadCategory::getValidationRules()]);
+    });*/
+});
+
+
+/**
  * Client
  */
 $app->group('/clients', function() {
@@ -59,7 +95,7 @@ $app->group('/clients', function() {
  */
 $app->group('/auth', function() {
     $this->post('', App\Actions\Auth\Signin::class)
-        ->setArguments(['state' => 'anonymous', 'validators' => ['email', 'password', 'authMode' => [false, true]]]);
+        ->setArguments(['state' => 'anonymous', 'validators' => App\Actions\Auth\Signin::getValidationRules()]);
 
     $this->patch('/{id}', App\Actions\Auth\UpdateToken::class)
         ->setArguments(['validators' => ['id' => ['uuid']]]);

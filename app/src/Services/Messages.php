@@ -84,8 +84,15 @@ class Messages
      */
     public function throwErrors($request, $response, Renderer $renderer)
     {
+        //'/[^\x20-\x7E]/'
+        //'/[\x00-\x1F\x80-\xFF]/'
+        //'/[[:^print:]]/'
+
         if ($this->hasErrors()) {
+
             $errors = $this->getErrors();
+            $contents = preg_replace('/[[:^print:]]/', ' ', $errors['errors'][0]['detail']);
+            $errors['errors'][0]['detail'] = $contents;
             $response = $renderer->render($request, $response, $errors);
             return $response->withStatus($errors['errors'][0]['status']);
         }

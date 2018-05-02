@@ -6,7 +6,30 @@ use Respect\Validation\Validator as v;
 
 class ValidationRules
 {
-    public function intValidator($name, $optional = false)
+    /**
+     * Retorna validação para passwords
+     * @param $name
+     * @param bool $optional
+     * @return $this
+     */
+    public static function passwordValidator($optional = false)
+    {
+        return $optional ? v::optional(v::length(8, 55)) : v::length(8, 55);
+    }
+
+    public static function authModeValidator($optional = false)
+    {
+        return $optional ? v::optional(v::in(['native', 'web'], true)) : v::in(['native', 'web'], true);
+    }
+
+    public static function uuidValidator($optional = false)
+    {
+        return $optional ? v::optional(v::regex('/^\{?[a-f\d]{8}-(?:[a-f\d]{4}-){3}[a-f\d]{12}\}?$/i')) : v::regex('/^\{?[a-f\d]{8}-(?:[a-f\d]{4}-){3}[a-f\d]{12}\}?$/i');
+    }
+
+
+
+    /*public function intValidator($name, $optional = false)
     {
         $intValidator = $optional ? v::optional(v::intVal())->setName($name) : v::intVal()->setName($name);
         return $intValidator;
@@ -46,5 +69,5 @@ class ValidationRules
     {
         $authModeValidator = $optional ? v::optional(v::in(['native', 'web'], true))->setName($name) : v::in(['native', 'web'], true)->setName($name);
         return $authModeValidator;
-    }
+    }*/
 }

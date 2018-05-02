@@ -42,7 +42,7 @@ class ClientRepository implements ClientInterface
         return false;
     }
 
-    public function getClients($page = 0, $perPage = 15)
+    public function getClients($page = 0, $perPage = 3)
     {
         $sql = "SELECT `id`, `first_name`, `last_name`, `email`, `birth_date`, `created_at`, `updated_at`, `password`, `status`, `phone`, `document_number` , `token`
             FROM `ecommerce`.`client`

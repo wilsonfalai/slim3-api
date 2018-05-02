@@ -4,6 +4,7 @@ namespace App\Actions\Auth;
 
 use App\Domain\Users\UserRepository;
 use App\Domain\Users\UserTransformer;
+use App\Middleware\ValidationRules;
 use App\Services\Auth;
 use App\Services\Messages;
 use App\Services\Transformer;
@@ -12,6 +13,7 @@ use Firebase\JWT\JWT;
 use RKA\ContentTypeRenderer\Renderer;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
+use Respect\Validation\Validator as v;
 
 final class Signin
 {    
@@ -35,6 +37,19 @@ final class Signin
         $this->uuid            = $uuid;
         $this->jwt             = $jwt;
         $this->renderer        = $renderer;
+    }
+
+    /**
+     * Validation Rules
+     *
+     * @return array
+     */
+    public static function getValidationRules(){
+        return [
+            'email' => v::email(),
+            'password' => ValidationRules::passwordValidator(),
+            'authMode' => ValidationRules::authModeValidator(),
+        ];
     }
 
     /**

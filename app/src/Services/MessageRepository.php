@@ -201,5 +201,60 @@ class MessageRepository
             'title'  => 'Token updated',
             'detail' => 'The authentication token has been updated.'
         ],
+
+        //PRODUCT
+        'PRODUCT-0001' => [
+            'code'   => 'PRODUCT-0001',
+            'status' => 200,
+            'title'  => 'Product created',
+            'detail' => 'Product created successful'
+        ],
+        'PRODUCT-0002' => [
+            'code'   => 'PRODUCT-0002',
+            'status' => 404,
+            'title'  => 'Product not found',
+            'detail' => 'The requested product was not found on this server.'
+        ],
+        'PRODUCT-0003' => [
+            'code'   => 'PRODUCT-0003',
+            'status' => 500,
+            'title'  => 'Unable to save product',
+            'detail' => 'A database error has occurred. Unable to save product.'
+        ],
+        'PRODUCT-0004' => [
+            'code'   => 'PRODUCT-0004',
+            'status' => 200,
+            'title'  => 'Product updated',
+            'detail' => 'Product updated successfully.'
+        ],
+
+
+        //CATEGORY
+        'CATEGORY-0001' => [
+            'code'   => 'CATEGORY-0001',
+            'status' => 200,
+            'title'  => 'Category created',
+            'detail' => 'Category created successful'
+        ],
+        'CATEGORY-0002' => [
+            'code'   => 'CATEGORY-0002',
+            'status' => 404,
+            'title'  => 'Category not found',
+            'detail' => 'The requested category was not found on this server.'
+        ],
+        'CATEGORY-0003' => [
+            'code'   => 'CATEGORY-0003',
+            'status' => 500,
+            'title'  => 'Unable to save category account',
+            'detail' => 'A database error has occurred. Unable to save category.'
+        ],
+        'CATEGORY-0004' => [
+            'code'   => 'CATEGORY-0004',
+            'status' => 200,
+            'title'  => 'Category updated',
+            'detail' => 'Category updated successfully.'
+        ],
+
+
     ];
 }
